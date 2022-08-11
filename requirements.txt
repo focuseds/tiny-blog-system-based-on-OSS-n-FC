@@ -1,0 +1,5 @@
+oss2~=2.16.0
+flask~=1.1.2
+webassets~=2.0
+pytz~=2019.3
+click~=8.0.4

@@ -1,0 +1,150 @@
+/**{*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    text-decoration: none;*/
+/*    font-family: "Microsoft Sans Serif", sans-serif;*/
+/*}*/
+
+/*body{*/
+/*    min-height: 80vh;*/
+/*    background-image: linear-gradient(120deg, #222C32, #2B343A);*/
+/*}*/
+
+body {
+    color: #768390;
+    background: #FFF;
+    font-family: "Effra", Helvetica, sans-serif;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+.remark-form{
+    width: 60%;
+    margin-left: auto;
+    background: #ffffff;
+    height: auto;
+    padding: 80px 40px;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.remark-form h1{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.input-box{
+    border-bottom: 2px solid #adadad;
+    position: relative;
+    margin: 30px 0;
+}
+
+.input-box input{
+    font-size: 18px;
+    color: #333;
+    border: none;
+    width: 100%;
+    outline: none;
+    background: none;
+    padding: 0 5px;
+    height: 45px;
+}
+
+.input-box span::before{
+    content: attr(data-plascholder);
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: .5s;
+}
+
+.input-box span::after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(120deg, #222C32, #2B343A);;
+    transition: .5s;
+}
+
+
+.focus + span::before{
+    top: -5px;
+}
+.focus + span::after{
+    width: 100%;
+}
+
+.subtn{
+    margin: 20px auto 0;
+    display: block;
+    width: 80%;
+    height: 50px;
+    border-right: none;
+    background: linear-gradient(120deg, #2B343A, #222C32, #575f85);
+    background-size: 200%;
+    color: #fff;
+    outline: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.subtn:hover{
+    background-position: right;
+}
+
+.pic-upload {
+    padding: 4px 10px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #888;
+    background: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-bottom: 10px;
+    margin-left: 2px;
+}
+.pic-upload input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer
+}
+.pic-upload:hover {
+    color: #444;
+    background: #eee;
+    border-color: #ccc;
+    text-decoration: none
+}
+.showName {
+    padding: 4px 10px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    cursor: pointer;
+    color: #889;
+    background: #ffffff;
+    border: 0 solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    margin-bottom: 12px;
+    margin-left: 2px;
+}

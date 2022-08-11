@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>个人微型博客</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel='stylesheet prefetch' href='https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+{#    <link rel="stylesheet" href="../static/css/style.css">#}
+    {% assets "css" %}
+        <link rel="stylesheet" type="text/css" href="{{ ASSET_URL }}"/>
+    {% endassets %}
+</head>
+<body>
+<header class="example-header" id="top">
+    <h1 class="text-center">个人微型博客</h1>
+</header>
+<div class="container-fluid">
+    <div class="row example-split"> <!-- basic/split/centered -->
+        <div class="col-md-12 example-title">
+            <h2>T I M E L I N E</h2>
+            <p>March 2020 - Present</p>
+            <p>🎈</p>
+            <p>{{ daily_content }}</p>
+        </div>
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+            <ul class="timeline timeline-split"> <!-- basic/split/centered -->
+                {% for block in day_list %}
+                    <li class="timeline-item">
+                        <div class="timeline-info">
+                            <span>{{ block.tag[1] }}</span> <!-- 打卡时间 -->
+                        </div>
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="timeline-title">{{ block.name }}</h3> <!--打卡标题 -->
+                            <p>{{ block.tag[0] }}</p> <!-- 打卡逼话 -->
+                            {% if display %}
+                                <img width="90%" height="auto" src="{{ block.url }}" alt="pic"/>
+                            {% else %}
+                            {% endif %}
+                        </div>
+                    </li>
+                {% else %}
+                {% endfor %}
+                <li class="timeline-item period">
+                    <div class="timeline-info"></div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h2 class="timeline-title">Feb 2020</h2>
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-info">
+                        <span>Feb 29, 2020</span> <!-- 打卡时间 -->
+                    </div>
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">START</h3> <!--打卡标题 -->
+                        <p>Doing is better than saying. 行胜于言。</p> <!-- 打卡逼话 -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+        {% if full_btn %}
+            {% if image_btn %}
+                <div class="row" style="width: 100%"></div>
+                <div class="watch-more">
+                    <a href="/?p=all">查看全部</a>
+                    <a href="/?q=on">显示图片</a>
+                </div>
+            {% else %}
+                <div class="row" style="width: 100%"></div>
+                <div class="watch-more">
+                    <a href="/?p=all&q=on">查看全部</a>
+                    <a href="/?p=all&q=off">隐藏图片</a>
+                </div>
+            {% endif %}
+        {% else %}
+            {% if image_btn %}
+                <div class="row" style="width: 100%"></div>
+                <div class="watch-more">
+                    <a href="/">回到首页</a>
+                    <a href="/?p=all&q=on">显示图片</a>
+                </div>
+            {% else %}
+                <div class="row" style="width: 100%"></div>
+                <div class="watch-more">
+                    <a href="/">回到首页</a>
+                    <a href="/?p=all">隐藏图片</a>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+<div class="example-bottom">
+    <p>Here is my Blog <a href="#" target="_blank">个人微型博客</a></p>
+    <P>©FOCUSEDS 2020</P>
+    <p>Power by FC</p>
+    <!-- <p><a href="/logout/" target="_blank">注销</a></p> -->
+</div>
+</body>
+</html>
