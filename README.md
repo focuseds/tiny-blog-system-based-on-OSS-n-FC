@@ -33,6 +33,14 @@
 1. 通过Funcraft实现资源管理，但是Funcraft后期不再维护，推荐使用Serverless Devs管理进行管理。详情请见：[什么是Serverless Devs](https://help.aliyun.com/document_detail/195473.html)。
 2. 对flask中提供路由对应配置到函数计算配置中。
 
+[//]: # (<p align="center">)
+
+[//]: # (<img width="50%" src="./static/pic/img.png" />)
+
+[//]: # (<img width="50%" src="./static/pic/img_1.png" />)
+
+[//]: # (</p>)
+
 ## 参考链接
 
 1. [阿里云对象存储OSS](https://www.aliyun.com/product/oss)
